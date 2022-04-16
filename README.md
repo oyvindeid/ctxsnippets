@@ -5,11 +5,13 @@ for writing [ConTeXt](https://wiki.contextgarden.net/Main_Page) code in [Emacs](
 
 ## Installation
 
-To install the snippets, clone the `context-mode` directory to `yas-snippet-dirs`
+To install the snippets, clone this repo as
 
-    $ git clone https://github.com/oyvindeid/ctxsnippets --no-checkout context-mode --depth 1
+    $ git clone https://github.com/oyvindeid/ctxsnippets
 
-and run
+and copy the `context-mode` directory to `yas-snippet-dirs`. 
+
+Then run
 
     M-x yas-recompile-all RET
     M-x yas-reload-all RET
