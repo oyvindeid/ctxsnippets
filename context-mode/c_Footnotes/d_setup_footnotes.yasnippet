@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : setfn
+# group: Footnotes
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Setup footnotes
+# --
+%%%%% FOOTNOTES CONFIGURATION %%%%%%%%%%%%%%%%%%%
+%% Location: ${1:$$(yas/choose-value '("Footnotes at the bottom of a page" "Footnotes in a single column" "Footnotes at the end of each chapter" "Footnotes in the text"))}
+%% Footnote symbols: ${2:$$(yas/choose-value '("numbers" "characters" "Characters" "romannumerals" "Romannumerals" "set 2"))}
+\setupinteraction[state=start]%
+${1:$(cond 
+((string-equal "Footnotes at the bottom of a page" yas-text)
+(concat "\\\setupnote[footnote][location=page]\n\\\setupnotation[footnote][way=bytext,bodyfont=small,n=2,"))
+((string-equal "Footnotes in a single column" yas-text)
+(concat "\\\setupnote[footnote][location=column]\n\\\setupnotation[footnote][way=bytext,bodyfont=small,n=1,"))
+((string-equal "Footnotes in the text" yas-text) 
+(concat "\\\setupnote[footnote][location=text]\n\\\setupnotation[footnote][way=bytext,bodyfont=small,"))
+((string-equal "Footnotes at the end of each chapter" yas-text)
+(concat "\\\definehead[chapterfootnotes][subject][incrementnumber=list]\n\\\startsetups[chapter:after]\n\s\s\\\definehead[footnoteshead][subject]\n\s\s\\\ifcase\\\rawcountervalue[footnote]\\\relax\n\s\s\\\or\n\s\s\s\s\\\page\n\s\s\s\s\\\startchapterfootnotes[title=\\\doiftextelse{\\\headtext{footnote}}{\\\headtext{footnote}}{Footnote}]\n\s\s\s\s\s\s\\\setupinterlinespace[line=3.3ex]\n\s\s\s\s\s\s\\\placefootnotes\n\s\s\s\s\\\stopchapterfootnotes\n\s\s\\\else\n\s\s\s\s\\\page\n\s\s\s\s\\\startchapterfootnotes[title=\\\doiftextelse{\\\headtext{footnotes}}{\\\headtext{footnotes}}{Footnotes}]\n\s\s\s\s\s\s\\\setupinterlinespace[line=3.3ex]\n\s\s\s\s\s\s\\\placefootnotes\n\s\s\s\s\\\stopchapterfootnotes\n\s\s\\\fi\n\\\stopsetups\n\\\setuphead[chapter][aftersection=\\\setups{chapter:after}]\n\\\setupnote[footnote][location=none]\n\\\setupnotation\n\s\s\s\s\s\s[footnote]\n\s\s\s\s\s\s[way=bychapter,bodyfont=small,alternative=left,hang=1,n=1,\n\s\s\s\s\s\s\snumbercommand={\\\tfx},width=0.75em,")))}numberconversion={$2}]
+%%%%% END OF CONFIGURATION %%%%%%%%%%%%%%%%%%%%%% $0

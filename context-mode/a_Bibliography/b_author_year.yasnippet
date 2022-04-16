@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : cays
+# group: Bibliography
+# name : Author (year)
+# --
+\cite[authoryears][${1:$$(if (boundp 'user-default-bibtex-file)(yas/choose-value (with-temp-buffer (insert-file-contents (symbol-value 'user-default-bibtex-file))(split-string (replace-regexp-in-string "[,]$" "" (replace-regexp-in-string "^[\s]*[@]+[a-zA-Z0-9]+[{]" "" (replace-regexp-in-string "^[\s]*[^@]+$" "" (buffer-string))) "\n" t))))(insert "key")(yas-text))}$0]

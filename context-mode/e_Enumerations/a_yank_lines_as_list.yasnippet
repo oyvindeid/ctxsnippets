@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : ylist
+# group: Enumerations
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Yank lines as list [sep: \n+]
+# --
+\startitemize[${1:$$(yas/choose-value '("n" "a" "A" "KA" "r" "R" "KR" "g" "m" "1" "2" "3" "4" "5" "6" "7" "8"))},${2:$$(yas/choose-value '("standard" "packed" "paragraph" "serried" "2*serried" "3*serried" "4*serried" "broad" "2*broad" "3*broad" "4*broad" "standard, columns" "packed, columns" "paragraph, columns" "serried, columns" "2*serried, columns" "3*serried, columns" "4*serried, columns" "broad, columns" "2*broad, columns" "3*broad, columns" "4*broad, columns" "standard, columns, three" "packed, columns, three" "paragraph, columns, three" "serried, columns, three" "2*serried, columns, three" "3*serried, columns, three" "4*serried, columns, three" "broad, columns, three" "2*broad, columns, three" "3*broad, columns, three" "4*broad, columns, three" "standard, columns, four" "packed, columns, four" "paragraph, columns, four" "serried, columns, four" "2*serried, columns, four" "3*serried, columns, four" "4*serried, columns, four" "broad, columns, four" "2*broad, columns, four" "3*broad, columns, four" "4*broad, columns, four"))}][stopper={${3:$$(yas/choose-value '(" " "." ")" ":"))}}]
+`(replace-regexp-in-string "^[[:blank:]]+" "\s\s"
+(replace-regexp-in-string "\\\\startitem[[:blank:]]+\\\\stopitem\n" ""
+(replace-regexp-in-string "[\\]+" "\\\\"
+(replace-regexp-in-string "~" "\\\\textasciitilde "
+(replace-regexp-in-string "#" "\\\\#"
+(replace-regexp-in-string "&" "\\\\&"
+(replace-regexp-in-string "|" "\\\\textbar "
+(replace-regexp-in-string "%" "\\\\percent "
+(replace-regexp-in-string "\\(%\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\percent\\\\"
+(replace-regexp-in-string "\\(|\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textbar\\\\"
+(replace-regexp-in-string "\\(~\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textasciitilde\\\\"
+(replace-regexp-in-string "\\([\$]\\)\\([[:nonascii:]A-Za-z0-9]+\\)" "\\\\textdollar "
+(replace-regexp-in-string "\\([^a-zA-Z#&|]\\)\\([\\]+\\)\\([^a-zA-Z#&|]\\)" "\\\\letterbackslash\\\\"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([\}]\\)" "\\\\quotation{"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([»\"“„”]\\)" "}"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([\}]\\)" "\\\\quote{"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹\'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([›\'‘‚’]\\)" "}"
+(replace-regexp-in-string "$" " \\\\stopitem"
+(replace-regexp-in-string "^" "\s\s\\\\startitem "
+(current-kill 0) t) t) nil nil 4) nil nil 2) nil nil 3) nil nil 1) nil nil 2) nil nil 1) nil nil 1) nil nil 1) nil nil 1)))))))))`
+\stopitemize
+$0

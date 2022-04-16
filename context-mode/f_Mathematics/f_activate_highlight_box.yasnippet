@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : ahbx
+# group: Mathematics
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Activate highlight box
+# --
+%%%%% MATH HIGHLIGHT BOX ACTIVATION %%%%%%%%%%%%%
+%% Usage: 1. hbx + tab 2. \HBX{math expr}
+%%    or: 1. region-ize math expression  2. hit C-c h b x
+%% Note: (setq yas-triggers-in-field t) enables usage of nested snippets
+%% Example usage: \m{ \HBX{2x + y}}
+%%                .. \NC \HBX{2x + y} \NC ..
+\definemathframed
+  [HBX]%
+  [backgroundcolor=${1:$$(yas/choose-value '(" " "black" "blue" "cyan" "darkblue" "darkcyan" "darkgray" "darkgreen" "darkmagenta" "darkred" "darkyellow" "gray" "green" "lightblue" "lightgray" "lightgreen" "lightred" "magenta" "middleblue" "middlecyan" "middlegray" "middlegreen" "middlemagenta" "middlered" "middleyellow" "orange" "red" "white" "yellow"))},backgroundoffset=2pt,frame=off,
+   location=mathematics,background=color]%
+%%%%% END OF MHB ACTIVATION %%%%%%%%%%%%%%%%%%%%% $0

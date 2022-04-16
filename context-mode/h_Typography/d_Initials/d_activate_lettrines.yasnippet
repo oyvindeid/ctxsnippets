@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : actltr
+# group: Typography.Initials
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Activate lettrines
+# --
+%%%%% LETTRINES ACTIVATION %%%%%%%%%%%%%%%%%%%%%%
+%% USAGE: \lettrine{FIRST CHARACTER}{REST OF WORD/TEXT}
+\usemodule[lettrine]
+\setuplettrine
+  [Lines=2
+   Hang=0.1,
+   Oversize=0.0,
+   Raise=0.05,
+   Findent=0.25em,
+   Nindent=0.25em,
+   Slope=0pt,
+   Image=no,
+   TextFont={\sc},
+   Ante=]
+%%%%% END OF ACTIVATION %%%%%%%%%%%%%%%%%%%%%%%%% $0

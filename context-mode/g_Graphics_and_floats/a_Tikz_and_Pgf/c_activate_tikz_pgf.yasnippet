@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : actpgf
+# group: Graphics & Floats.TikZ/PGF
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Activate TikZ/PGF
+# --
+%%%%% PGF/TIKZ ACTIVATION %%%%%%%%%%%%%%%%%%%%%%%
+\usemodule[tikz]
+\usemodule[pgfplots]
+\usemodule[pgfplotstable]
+\usepgfplotslibrary[statistics]
+\usepgfplotslibrary[dateplot]
+\usetikzlibrary{plotmarks}
+\pgfplotsset{compat=1.4}
+\pgfplotsset{width={0.5\textwidth}}  %% Size of each plot set to 50% of text width
+%% Properties of each plot:
+\pgfplotsset{
+  legend columns=-1,
+  every axis legend/.append style={font={\switchtobodyfont[dejavu,ss,12pt]\tfx},color=black,at={(1,1.062)},
+                                   anchor=north east,draw=none,fill=none},
+  every axis title/.append style={font={\switchtobodyfont[dejavu,ss,12pt]\tf},color=black,at={(0,1.042)},
+                                  anchor=north east,draw=none,fill=none},
+  every axis label/.append style={font={\switchtobodyfont[dejavu,ss,12pt]\tfx},color=black},
+  every x tick label/.append style={font={\switchtobodyfont[dejavu,ss,10pt]\tfx},color=black},
+  every y tick label/.append style={font={\switchtobodyfont[dejavu,ss,10pt]\tfx},color=black},
+  every z tick label/.append style={font={\switchtobodyfont[dejavu,ss,10pt]\tfx},color=black},
+  nodes near coords style={font={\switchtobodyfont[dejavu,ss,8pt]\tfx},color=black},
+}
+\pgfplotsset{cycle list name=auto} %% 'auto' 'color' 'linestyles' 'exotic' 'black white' 'mark list' 'exotic'
+%%%%% END OF ACTIVATION %%%%%%%%%%%%%%%%%%%%%%%%% $0

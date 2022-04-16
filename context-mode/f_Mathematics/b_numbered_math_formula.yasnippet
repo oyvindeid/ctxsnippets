@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key: nmf
+# group: Mathematics
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Numbered math formula
+# --
+\startplaceformula[reference={formula:${1:REFERENCE NAME}}]
+  \startformula
+    \startalign[align={left,left},m=1,n=2]
+       \NC  ${2:EXPR } \NC ${3:EXPR } \NR
+       \NC  ${4:EXPR } \NC ${5:EXPR } \NR
+    \stopalign
+  \stopformula
+\stopplaceformula $0

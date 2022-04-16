@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : inpf
+# group: General
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Input file in working dir
+# --
+`(setq yas-triggers-in-field 'nil)`\input ${1:$$(let ((tfiles (remove (file-name-nondirectory (buffer-file-name))(directory-files (expand-file-name (file-name-directory buffer-file-name)) nil "^[^.]*\\.tex$"))))(if (> (length tfiles) 0)(yas-choose-value (mapcar '(lambda (x) (file-name-base x)) tfiles))(yas-text)))}$0

@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : ymt
+# group: Margin Text
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Yank as margin text
+# --
+\\${1:$$(yas/choose-value '("margintext" "inleft" "inright"))}{`(replace-regexp-in-string "~" "\\\\textasciitilde "
+(replace-regexp-in-string "#" "\\\\#"
+(replace-regexp-in-string "&" "\\\\&"
+(replace-regexp-in-string "|" "\\\\textbar "
+(replace-regexp-in-string "%" "\\\\percent "
+(replace-regexp-in-string "\\(%\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\percent\\\\"
+(replace-regexp-in-string "\\(|\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textbar\\\\"
+(replace-regexp-in-string "\\(~\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textasciitilde\\\\"
+(replace-regexp-in-string "\\([\$]\\)\\([[:nonascii:]A-Za-z0-9]+\\)" "\\\\textdollar "
+(replace-regexp-in-string "\\([^a-zA-Z#&|]\\)\\([\\]+\\)\\([^a-zA-Z#&|]\\)" "\\\\letterbackslash\\\\"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([\}]\\)" "\\\\quotation{"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([»\"“„”]\\)" "}"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([\}]\\)" "\\\\quote{"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹\'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([›\'‘‚’]\\)" "}"
+(current-kill 0) nil nil 4) nil nil 2) nil nil 3) nil nil 1) nil nil 2) nil nil 1) nil nil 1) nil nil 1) nil nil 1 ))))))`}$0

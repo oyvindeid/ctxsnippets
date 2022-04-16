@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : setmt
+# group: Margin Text
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Setup margin texts
+# --
+%%%%% MARGIN TEXTS CONFIGURATION %%%%%%%%%%%%%
+%% Font Style: ${1:$$(yas/choose-value '("No style" "Serif" "Sans serif" "Teletype"))}
+%% Font Size: ${2:$$(yas/choose-value '("xx - text scaled at 0.6" "x - text scaled at 0.8" "typeface - text scaled at 1" "a - text scaled at 1.2" "b - text scaled at 1.44" "c - text scaled at 1.72" "d - text scaled at 2.07"))}
+%% Font Alternative: ${3:$$(yas/choose-value '("Normal" "Bold" "Italic" "Slanted" "Bold Italic" "Bold Slanted" "Smallcaps"))}
+%% Text Color: ${4:$$(yas/choose-value '("black" "blue" "cyan" "darkblue" "darkcyan" "darkgray" "darkgreen" "darkmagenta" "darkred" "darkyellow" "gray" "green" "lightblue" "lightgray" "lightgreen" "lightred" "magenta" "middleblue" "middlecyan" "middlegray" "middlegreen" "middlemagenta" "middlered" "middleyellow" "orange" "red" "white" "yellow"))}
+\definemargindata
+  [margintext]
+  [style={\\${1:$(cond ((string-equal "No style" yas-text) (concat "tf"))((string-equal "Serif" yas-text) (concat "rm"))((string-equal "Sans serif" yas-text) (concat "ss"))((string-equal "Teletype" yas-text) (concat "tt")))}${2:$(cond ((string-equal "xx - text scaled at 0.6" yas-text) (concat "xx"))((string-equal "x - text scaled at 0.8" yas-text) (concat "x"))((string-equal "a - text scaled at 1.2" yas-text) (concat "a"))((string-equal "b - text scaled at 1.44" yas-text) (concat "b"))((string-equal "c - text scaled at 1.72" yas-text) (concat "c"))((string-equal "d - text scaled at 2.07" yas-text) (concat "d")))}${3:$(cond ((string-equal "Bold" yas-text) (concat "\\\bf"))((string-equal "Italic" yas-text) (concat "\\\it"))((string-equal "Slanted" yas-text) (concat "\\\sl"))((string-equal "Bold Italic" yas-text) (concat "\\\bi"))((string-equal "Bold Slanted" yas-text) (concat "\\\bs"))((string-equal "Smallcaps" yas-text) (concat "\\\sc")))}},color=$4,stack=yes]
+\definemargindata
+  [inleft]
+  [location=left,style={\\${1:$(cond ((string-equal "No style" yas-text) (concat "tf"))((string-equal "Serif" yas-text) (concat "rm"))((string-equal "Sans serif" yas-text) (concat "ss"))((string-equal "Teletype" yas-text) (concat "tt")))}${2:$(cond ((string-equal "xx - text scaled at 0.6" yas-text) (concat "xx"))((string-equal "x - text scaled at 0.8" yas-text) (concat "x"))((string-equal "a - text scaled at 1.2" yas-text) (concat "a"))((string-equal "b - text scaled at 1.44" yas-text) (concat "b"))((string-equal "c - text scaled at 1.72" yas-text) (concat "c"))((string-equal "d - text scaled at 2.07" yas-text) (concat "d")))}${3:$(cond ((string-equal "Bold" yas-text) (concat "\\\bf"))((string-equal "Italic" yas-text) (concat "\\\it"))((string-equal "Slanted" yas-text) (concat "\\\sl"))((string-equal "Bold Italic" yas-text) (concat "\\\bi"))((string-equal "Bold Slanted" yas-text) (concat "\\\bs"))((string-equal "Smallcaps" yas-text) (concat "\\\sc")))}},color=$4,stack=yes]
+\definemargindata
+  [inright]
+  [location=right,style={\\${1:$(cond ((string-equal "No style" yas-text) (concat "tf"))((string-equal "Serif" yas-text) (concat "rm"))((string-equal "Sans serif" yas-text) (concat "ss"))((string-equal "Teletype" yas-text) (concat "tt")))}${2:$(cond ((string-equal "xx - text scaled at 0.6" yas-text) (concat "xx"))((string-equal "x - text scaled at 0.8" yas-text) (concat "x"))((string-equal "a - text scaled at 1.2" yas-text) (concat "a"))((string-equal "b - text scaled at 1.44" yas-text) (concat "b"))((string-equal "c - text scaled at 1.72" yas-text) (concat "c"))((string-equal "d - text scaled at 2.07" yas-text) (concat "d")))}${3:$(cond ((string-equal "Bold" yas-text) (concat "\\\bf"))((string-equal "Italic" yas-text) (concat "\\\it"))((string-equal "Slanted" yas-text) (concat "\\\sl"))((string-equal "Bold Italic" yas-text) (concat "\\\bi"))((string-equal "Bold Slanted" yas-text) (concat "\\\bs"))((string-equal "Smallcaps" yas-text) (concat "\\\sc")))}},color=$4,stack=yes]
+%%%%% END OF MARGIN TEXTS CONFIGURATION %%%%%% $0

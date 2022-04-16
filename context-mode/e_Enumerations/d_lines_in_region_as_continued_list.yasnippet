@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# binding: C-c c l s
+# group: Enumerations
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Lines in region as continued list [sep: \n+]
+# --
+\startitemize[continue]
+`(replace-regexp-in-string "^[[:blank:]]+" "\s\s"
+(replace-regexp-in-string "\\\\startitem[[:blank:]]+\\\\stopitem\n" ""
+(replace-regexp-in-string "[\\]+" "\\\\"
+(replace-regexp-in-string "~" "\\\\textasciitilde "
+(replace-regexp-in-string "#" "\\\\#"
+(replace-regexp-in-string "&" "\\\\&"
+(replace-regexp-in-string "|" "\\\\textbar "
+(replace-regexp-in-string "%" "\\\\percent "
+(replace-regexp-in-string "\\(%\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\percent\\\\"
+(replace-regexp-in-string "\\(|\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textbar\\\\"
+(replace-regexp-in-string "\\(~\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textasciitilde\\\\"
+(replace-regexp-in-string "\\([\$]\\)\\([[:nonascii:]A-Za-z0-9]+\\)" "\\\\textdollar "
+(replace-regexp-in-string "\\([^a-zA-Z#&|]\\)\\([\\]+\\)\\([^a-zA-Z#&|]\\)" "\\\\letterbackslash\\\\"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([\}]\\)" "\\\\quotation{"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([»\"“„”]\\)" "}"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([\}]\\)" "\\\\quote{"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹\'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([›\'‘‚’]\\)" "}"
+(replace-regexp-in-string "$" " \\\\stopitem"
+(replace-regexp-in-string "^" "\s\s\\\\startitem "
+(yas-selected-text) t) t) nil nil 4) nil nil 2) nil nil 3) nil nil 1) nil nil 2) nil nil 1) nil nil 1) nil nil 1) nil nil 1)))))))))`
+\stopitemize
+$0

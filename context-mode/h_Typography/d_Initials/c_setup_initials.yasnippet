@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : setinit
+# group: Typography.Initials
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Setup initials
+# --
+%%%%% INITIALS SETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% USAGE: \placeinitial <W>ORD
+\setupinitial
+  [color=${1:$$(yas/choose-value '("black" "blue" "cyan" "darkblue" "darkcyan" "darkgray" "darkgreen" "darkmagenta" "darkred" "darkyellow" "gray" "green" "lightblue" "lightgray" "lightgreen" "lightred" "magenta" "middleblue" "middlecyan" "middlegray" "middlegreen" "middlemagenta" "middlered" "middleyellow" "orange" "red" "white" "yellow"))},
+   font={Bold sa ${2:$$(yas/choose-value '(" " "1" "1.5" "2" "2.5" "3" "3.5" "4" "5"))}},
+   distance=${3:$$(yas/choose-value '(" " "1pt" "2pt" "3pt" "4pt" "5pt" "6pt" "7pt" "8pt" "9pt" "10pt"))},
+   n=${4:$$(yas/choose-value '(" " "1" "2" "3" "4" "5" "6" "7" "8" "9" "10"))}]
+%%%%% END OF SETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% $0

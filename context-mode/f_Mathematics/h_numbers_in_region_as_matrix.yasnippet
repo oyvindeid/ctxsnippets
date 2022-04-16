@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# binding: C-c m x
+# group: Mathematics
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Numbers in region as matrix [sep: \s+ \n]
+# --
+\startalign[center]
+  \m{${1:M$(upcase yas-text)}_{${2:m},${3:n}} = }
+    \startmathmatrix[left={\left${4:$$(yas/choose-value '("(" "["))}\,}, right={\,\right${4:$(replace-regexp-in-string "\\\(" ")" (replace-regexp-in-string "\\\[" "]" yas-text))}}]
+      `(replace-regexp-in-string "\n" "\n\s\s\s\s\s\s"
+ (replace-regexp-in-string "[\t]" ""
+ (replace-regexp-in-string "[\t]+" ""
+ (replace-regexp-in-string "\\\\NC \\\\NR" "\\\\NR"
+ (replace-regexp-in-string "\\\\NC \\\\NC" "\\\\NC"
+ (replace-regexp-in-string "[ ]+" " \\\\NC "
+ (replace-regexp-in-string "^" "\\\\NC "
+ (replace-regexp-in-string "$" " \\\\NR"
+ (yas-selected-text)))))))))`
+    \stopmathmatrix
+\stopalign $0

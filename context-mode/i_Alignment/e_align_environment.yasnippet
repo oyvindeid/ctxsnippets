@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : algenv
+# group: Alignment
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Align environment
+# --
+\startalignment[${1: $$(yas/choose-value '("flushleft" "middle" "flushright" "outer" "inner"))}]
+  $0
+\stopalignment

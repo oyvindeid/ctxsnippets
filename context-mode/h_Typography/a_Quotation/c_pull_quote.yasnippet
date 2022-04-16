@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : pqt
+# group: Typography.Quotation
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Pull quote
+# --
+\startplacepullquote[location={right},title={${1:TITLE}},reference={pullquote:${1:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^a-z0-9A-Z]" " " yas-text)))}}]
+  \startpulltext
+    ${2:TEXT}
+  \stoppulltext
+\stopplacepullquote $0

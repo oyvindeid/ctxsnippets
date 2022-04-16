@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# binding: C-c u p
+# group: Paragraphs
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name :  Region as unpacked
+# --
+\startunpacked
+  `(replace-regexp-in-string "[\\]+" "\\\\"
+(replace-regexp-in-string "\\(\\\\blank\n\\)\\{2,\\}" "\\\\blank\n"
+(replace-regexp-in-string "\\\\blank\\\\par" "\\\\blank"
+(replace-regexp-in-string "\\\\par\\\\par" "\\\\par"
+(replace-regexp-in-string "\n" "\\\\par\n"
+(replace-regexp-in-string "\\(^\\)\\(\\s-*\\)" ""
+(replace-regexp-in-string "\\(^\\s-*$\\)\n" "\\\\blank\n"
+(replace-regexp-in-string "~" "\\\\textasciitilde "
+(replace-regexp-in-string "#" "\\\\#"
+(replace-regexp-in-string "&" "\\\\&"
+(replace-regexp-in-string "|" "\\\\textbar "
+(replace-regexp-in-string "%" "\\\\percent "
+(replace-regexp-in-string "\\(%\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\percent\\\\"
+(replace-regexp-in-string "\\(|\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textbar\\\\"
+(replace-regexp-in-string "\\(~\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textasciitilde\\\\"
+(replace-regexp-in-string "\\([\$]\\)\\([[:nonascii:]A-Za-z0-9]+\\)" "\\\\textdollar "
+(replace-regexp-in-string "\\([^a-zA-Z#&|]\\)\\([\\]+\\)\\([^a-zA-Z#&|]\\)" "\\\\letterbackslash\\\\"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([\}]\\)" "\\\\quotation{"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([»\"“„”]\\)" "}"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([\}]\\)" "\\\\quote{"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹\'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([›\'‘‚’]\\)" "}"
+(yas-selected-text) nil nil 4) nil nil 2) nil nil 3) nil nil 1) nil nil 2) nil nil 1) nil nil 1) nil nil 1) nil nil 1 )))))))))))))`
+\stopunpacked $0

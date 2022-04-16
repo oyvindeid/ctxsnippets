@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : tass
+# group: General
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : TeX variable assignment
+# --
+${4:${1:$(replace-regexp-in-string "^\\\\(edef\\\\|xdef\\\\|gdef\\\\)$" "" (replace-regexp-in-string "^def$" "\\\\\\\unexpanded" yas-text) nil nil 1)}}\\${1:$$(yas/choose-value'("def" "edef" "gdef" "xdef"))}\\${2:IDENTIFIER}{${3:${1:$(replace-regexp-in-string "^\\\\(edef\\\\|xdef\\\\)$" "EXPANDABLE TEXT" (replace-regexp-in-string "^\\\\(def\\\\|gdef\\\\)$" "TEXT" yas-text nil nil 1)nil nil 1)}}}%$0

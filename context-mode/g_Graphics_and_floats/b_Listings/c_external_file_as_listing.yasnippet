@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : lstfile
+# group: Graphics & Floats.Listings
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : External file as listing
+# --
+\startplacelisting[location=here,title={${3:$2}},list={$3},reference={listing:${3:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}]
+  \type${1:IDENTIFIER$$(upcase yas-text)}file{${2:FILE NAME}}
+\stopplacelisting $0

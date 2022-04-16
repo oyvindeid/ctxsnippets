@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : chp
+# group: Sectioning
+# expand-env: ((yas/indent-line 'nil) (yas/wrap-around-region 'nil))
+# name : Chapter (numbered)
+# --
+\startchapter[title={${1:TITLE}},list={$1},reference={chapter:${1:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}]
+
+$0
+
+\stopchapter

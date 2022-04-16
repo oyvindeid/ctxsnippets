@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : actfg
+# group: Graphics & Floats.Figures
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Activate usage of figures
+# --
+%%%%% FIGURES ACTIVATION %%%%%%%%%%%%%%%%%%%%%%%%
+%% Path to figures directory: ${1:`(if (boundp 'user-default-figures-dir)(progn (symbol-value 'user-default-figures-dir))(concat "PATH"))`}
+\setupexternalfigures
+  [directory={$1},
+   order={pdf,jpeg,png,mps},
+   location={global,local,default},frame=off,maxwidth={\textwidth},maxheight={0.8\textheight}]
+\setupcombinations[distance=5em,after={\blank[5ex]}] %% Gap around combo figures
+%%%%% END OF ACTIVATION %%%%%%%%%%%%%%%%%%%%%%%%% $0

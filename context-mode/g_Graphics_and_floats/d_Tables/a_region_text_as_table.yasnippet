@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# binding: C-c t b l
+# group: Graphics & Floats.Tables
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Region text as table [sep: \s\s \n]
+# --
+\startplacetable[location={${1:$$(yas/choose-value '("left" "right" "here" "top" "bottom" "inleft" "inright" "inmargin" "margin" "page" "opposite" "always" "force"))}${3:$(cond ((string-equal "numbered caption" yas-text) (concat ""))((string-equal "unnumbered caption" yas-text)(concat ",nonumber"))((string-equal "no caption" yas-text)(concat ",none")))}},title={${2:TITLE TEXT}},list={$2},reference={table:${2:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}] %% Use ${3:$$(yas/choose-value '("numbered caption" "unnumbered caption" "no caption"))}
+  \bTABLE[setups=${4:IDENTIFIER}]
+    `(replace-regexp-in-string "[\\]+" "\\\\" (replace-regexp-in-string "~" "\\\\textasciitilde "
+(replace-regexp-in-string "#" "\\\\#"
+(replace-regexp-in-string "&" "\\\\&"
+(replace-regexp-in-string "|" "\\\\textbar "
+(replace-regexp-in-string "%" "\\\\percent "
+(replace-regexp-in-string "\\(%\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\percent\\\\"
+(replace-regexp-in-string "\\(|\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textbar\\\\"
+(replace-regexp-in-string "\\(~\\)\\([^[:nonascii:]a-zA-Z0-9]\\)" "\\\\textasciitilde\\\\"
+(replace-regexp-in-string "\\([\$]\\)\\([[:nonascii:]A-Za-z0-9]+\\)" "\\\\textdollar "
+(replace-regexp-in-string "\\([^a-zA-Z#&|]\\)\\([\\]+\\)\\([^a-zA-Z#&|]\\)" "\\\\letterbackslash\\\\"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([\}]\\)" "\\\\quotation{"
+(replace-regexp-in-string "\\([«\"“„”]\\)\\([^«»\"“„”]+\\)\\([»\"“„”]\\)" "}"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([\}]\\)" "\\\\quote{"
+(replace-regexp-in-string "\\([^[:nonascii:]a-zA-Z]+\\)\\([‹\'‘‚’]\\)\\([^'‹›‘‚’]+\\)\\([›\'‘‚’]\\)" "}"
+(replace-regexp-in-string "\n" "\n\s\s\s\s"
+(replace-regexp-in-string "\\(\s\s\\)" " \\\\eTD\\\\bTD "
+(replace-regexp-in-string "^" "\\\\bTR\\\\bTD "
+(replace-regexp-in-string "$" " \\\\eTD\\\\eTR"
+(replace-regexp-in-string "[\n][\s]*$" ""
+(yas-selected-text)))))) nil nil 4) nil nil 2) nil nil 3) nil nil 1) nil nil 2) nil nil 1) nil nil 1) nil nil 1) nil nil 1)))))))`
+  \eTABLE
+\stopplacetable $0

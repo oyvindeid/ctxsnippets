@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : env
+# group: General
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Use an environment
+# --
+\start${1:IDENTIFIER}${2:$(let ((f2 (yas-field-value 2)))(cond ((>(string-width (format "%s" f2)) 0)(concat "["))))}${2:OPION(S)=VALUE(S,)|KEYWORD|EMPTY}${2:$(let ((f2 (yas-field-value 2)))(cond ((>(string-width (format "%s" f2)) 0)(concat "]"))))}
+  ${3:TEXT/CONTENT}
+\stop$1
+$0

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : sub
+# group: Sectioning
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Subject (unnumbered)
+# --
+\start${1:$$(yas/choose-value'("subject" "subsubject" "subsubsubject"))}[title={${2:TITLE}},list={$2},reference={$1:${2:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}]
+  $0
+\stop$1

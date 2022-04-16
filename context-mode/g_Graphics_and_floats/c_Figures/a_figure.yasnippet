@@ -1,0 +1,44 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : fg
+# group: Graphics & Floats.Figures
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Figure
+# --
+\startplacefigure[location={${1:$$(yas/choose-value '("left" "right" "here" "top" "bottom" "inleft" "inright" "inmargin" "margin" "page" "opposite" "always" "force"))}${5:$(cond ((string-equal "numbered caption" yas-text) (concat ""))((string-equal "unnumbered caption" yas-text)(concat ",nonumber"))((string-equal "no caption" yas-text)(concat ",none")))}},title={${4:${2:$(replace-regexp-in-string "[_]+" " " (replace-regexp-in-string "[-]+" " " (replace-regexp-in-string "[.]+" "" (replace-regexp-in-string "\.[A-Za-z0-9]+$" "" yas-text))))}}},list={$4},reference={figure:${2:$(replace-regexp-in-string "[-._]+" "" (capitalize yas-text))}}] %% Use ${5:$$(yas/choose-value '("numbered caption" "unnumbered caption" "no caption"))}
+  \externalfigure[{${2:$$(if (boundp 'user-default-figures-dir)
+                               (let ((flist (append (directory-files user-default-figures-dir t "^[^.]+[.]pdf$")
+                                            (append (directory-files user-default-figures-dir t "^[^.]+[.]PDF$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]mps$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]MPS$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jpg$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JPG$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jpeg$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JPEG$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]png$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]PNG$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jp2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JP2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jbig$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JBIG$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jbig2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JBIG2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]jb2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]JB2$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]svg$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]SVG$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]svgz$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]SVGZ$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]eps$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]EPS$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]ai$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]AI$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]gif$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]GIF$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]tiff$")
+                                                    (directory-files user-default-figures-dir t "^[^.]+[.]TIFF$")))))
+                                 (if (> (length flist)0)
+                                   (yas-choose-value (mapcar '(lambda (x) (file-name-nondirectory x)) flist))
+                                   (insert "FILE")(yas-text)))
+                               (insert "FILE")(yas-text))}}][width=${3:4cm}]
+\stopplacefigure $0

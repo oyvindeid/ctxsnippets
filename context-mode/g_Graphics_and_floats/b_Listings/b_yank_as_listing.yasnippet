@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : ylst
+# group: Graphics & Floats.Listings
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : Yank as listing
+# --
+\startplacelisting[location=here,title={${1:TITLE}},list={$1},reference={listing:${1:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}]
+\start${2:IDENTIFIER$$(upcase yas-text)}
+`(current-kill 0)`
+\stop$2
+\stopplacelisting $0

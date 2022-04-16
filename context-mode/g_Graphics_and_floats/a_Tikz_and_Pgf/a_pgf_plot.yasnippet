@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : pgfpt
+# group: Graphics & Floats.TikZ/PGF
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : PGF plot
+# --
+\startplacefigure[location={${1:$$(yas/choose-value '("left" "right" "here" "top" "bottom" "inleft" "inright" "inmargin" "margin" "page" "opposite" "always" "force"))}${3:$(cond ((string-equal "numbered caption" yas-text) (concat ""))((string-equal "unnumbered caption" yas-text)(concat ",nonumber"))((string-equal "no caption" yas-text)(concat ",none")))}},title={${2:TITLE}},list={$2},reference={figure:${5:$(replace-regexp-in-string "[-._]+" "" (capitalize yas-text))}}] %% Use ${3:$$(yas/choose-value '("numbered caption" "unnumbered caption" "no caption"))}
+  \startframedtext[align=center,frame=off,height=fit,width=\textwidth,boffset=0cm,loffset=0cm,roffset=0cm,toffset=0cm]%
+    \starttikzpicture
+      \start${4:$$(yas/choose-value '("axis" "semilogxaxis" "semilogyaxis" "loglogaxis"))}
+        [${9:PGF CODE}
+         xlabel={$6},ylabel={$7}]
+        \addplot table [x=${6:COLUMN NAME},y=${7:COLUMN NAME},col sep=${8:$$(yas/choose-value '("semicolon" "comma"))}]{`(if (boundp 'user-default-csv-files-dir)(progn (file-name-as-directory (symbol-value 'user-default-csv-files-dir)))(concat ""))`${5:$$(cond ((and (boundp 'user-default-csv-files-dir) (>(length (append (directory-files user-default-csv-files-dir t "^[^.]*\\.csv$") (directory-files user-default-csv-files-dir t "^[^.]*\\.CSV$")))0))(yas-choose-value (mapcar '(lambda (x) (file-name-nondirectory x)) (append (directory-files user-default-csv-files-dir t "^[^.]*\\.csv$") (directory-files user-default-csv-files-dir t "^[^.]*\\.CSV$")) )))((> (length (append (directory-files (expand-file-name (file-name-directory buffer-file-name)) t "^[^.]*\\.csv$")(directory-files (expand-file-name (file-name-directory buffer-file-name)) t "^[^.]*\\.CSV$")))0)(yas-choose-value (mapcar '(lambda (x) (file-name-nondirectory x)) (append (directory-files (expand-file-name (file-name-directory buffer-file-name)) t "^[^.]*\\.csv$") (directory-files (expand-file-name (file-name-directory buffer-file-name)) t "^[^.]*\\.CSV$")))))(t(yas-text)))`(if (boundp 'user-default-csv-files-dir)(concat "")(concat "full_path_to_somefile.csv"))`}};
+      \stop$4
+    \stoptikzpicture
+  \stopframedtext
+\stopplacefigure $0

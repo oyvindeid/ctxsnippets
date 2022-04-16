@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
+# key : tikzdg
+# group: Graphics & Floats.TikZ/PGF
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
+# name : TikZ diagram
+# --
+\startplacefigure[location={${1:$$(yas/choose-value '("left" "right" "here" "top" "bottom" "inleft" "inright" "inmargin" "margin" "page" "opposite" "always" "force"))}${3:$(cond ((string-equal "numbered caption" yas-text) (concat ""))((string-equal "unnumbered caption" yas-text)(concat ",nonumber"))((string-equal "no caption" yas-text)(concat ",none")))}},title={${2:TITLE}},list={$2},reference={figure:${2:$(replace-regexp-in-string "[ ]+" "" (capitalize (replace-regexp-in-string "[^[:nonascii:]a-z0-9A-Z]" " " yas-text)))}}] %% Use ${3:$$(yas/choose-value '("numbered caption" "unnumbered caption" "no caption"))}
+  \startframedtext[align=center,frame=off,height=fit,width=\textwidth,boffset=0cm,loffset=0cm,roffset=0cm,toffset=0cm]%
+    \starttikzpicture[scale=2,
+                      ${4:DIAGRAM SETTINGS}]
+      $0
+    \stoptikzpicture
+  \stopframedtext
+\stopplacefigure
