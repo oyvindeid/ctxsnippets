@@ -25,7 +25,7 @@ Three Emacs config variables can be set like
 ```lisp
 (setq user-default-figures-dir "~/Pictures")
 (setq user-default-bibtex-file "~/Documents/references.bib")
-(setq user-default-csv-files-dir "~/Documents/csvfiles")
+(setq user-default-csv-files-dir "~/csvfiles")  ;; PGF plot data source directory
 ```
 
 in order to take full advantage of the installed templates.
