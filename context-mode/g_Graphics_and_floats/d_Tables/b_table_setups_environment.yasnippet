@@ -11,4 +11,5 @@
 \startsetups[$1]
 ${2:$(cond ((string-equal "Default" yas-text)(concat "\\\setupTABLE[frame=on]"))((string-equal "Empty" yas-text)(concat "\\\setupTABLE[frame=off]"))((string-equal "Booktabs" yas-text)(concat "\\\setupTABLE[frame=off]\n\\\setupTABLE[r][first][topframe=on,rulethickness=2pt]\n\\\setupTABLE[r][last][bottomframe=on,rulethickness=2pt]\n\\\setupTABLE[r][2][topframe=on,rulethickness=1pt]\n\\\setupTABLE[r][first][style={\\\tf\\\bf}]\n\\\setupTABLE[r][each][align={middle,lohi}]")))}
 \stopsetups
-%%%%% END OF CONFIGURATION %%%%%%%%%%%%%%%%%%%%%% $0
+%%%%% END OF CONFIGURATION %%%%%%%%%%%%%%%%%%%%%%
+$0

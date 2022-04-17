@@ -2,11 +2,11 @@
 # contributor : Øyvind Eidhammer <oyvindhe@yahoo.com>
 # key : actbib
 # group: Bibliography
-# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil) (yas/triggers-in-field 'nil))
+# expand-env: ((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))
 # name : Activate bibliography
 # --
 %%%%% BIBLIOGRAPHY ACTIVATION %%%%%%%%%%%%%%%%%%%
-%% BibTeX file: ${1:$$(if (boundp 'user-default-bibtex-file) (symbol-value 'user-default-bibtex-file)(if (> (length (directory-files (expand-file-name (file-name-directory buffer-file-name)) nil "^[^.]*\\.bib$")) 0)(yas-choose-value (directory-files (expand-file-name (file-name-directory buffer-file-name)) nil "^[^.]*\\.bib$"))(yas-text)))}
+%% BibTeX file: ${1:$$(if (boundp 'user-default-bibtex-file) (progn (insert (symbol-value 'user-default-bibtex-file))(yas-text))(if (> (length (directory-files (expand-file-name (file-name-directory buffer-file-name)) nil "^[^.]*\\.bib$")) 0)(yas-choose-value (directory-files (expand-file-name (file-name-directory buffer-file-name)) nil "^[^.]*\\.bib$"))(yas-text)))}
 %% Style: ${2:$$(yas/choose-value '("apa" "aps"))}
 \definebtxdataset[default]
 \defineregister[indexofauthors]
